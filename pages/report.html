@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Report — WindCast FYP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/layout.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand"><div class="brand__mark">WC</div><div><div class="brand__title">WindCast FYP</div><div class="brand__subtitle">PDF Report Builder</div></div></div>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Map</a>
+        <a class="active cta" href="report.html">Report</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h2">Download PDF Report</h1>
+    <p class="p muted">This uses your CSV forecasts + station metadata. If user uses GPS, we apply nearest-station fallback (B1).</p>
+
+    <div class="controls">
+      <div class="control">
+        <label>Station (A)</label>
+        <select id="stationSelect"></select>
+      </div>
+      <div class="control">
+        <label>Nearest station (B1)</label>
+        <button class="btn ghost" id="useLocation">Use my location</button>
+      </div>
+      <div class="control">
+        <label>Forecast horizon</label>
+        <select id="horizon">
+          <option value="1">Lead 1 month</option>
+          <option value="3">Lead 3 months</option>
+          <option value="6">Lead 6 months</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="toast" id="locStatus">Tip: If you want “any location in KPK”, GPS is the supported method in this static site.</div>
+
+    <div class="grid2" style="margin-top:14px;">
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+          <div>
+            <div class="muted small">Report preview</div>
+            <div class="h2" id="stationName">—</div>
+            <div class="muted small" id="modeText">—</div>
+          </div>
+          <span id="badge" class="badge">—</span>
+        </div>
+
+        <div class="kv">
+          <div class="kv__row"><div class="kv__k">Coordinates</div><div class="kv__v" id="coords">—</div></div>
+          <div class="kv__row"><div class="kv__k">Direction (hint)</div><div class="kv__v" id="dir">—</div></div>
+          <div class="kv__row"><div class="kv__k">Lead 1</div><div class="kv__v" id="f1">—</div></div>
+          <div class="kv__row"><div class="kv__k">Lead 3</div><div class="kv__v" id="f3">—</div></div>
+          <div class="kv__row"><div class="kv__k">Lead 6</div><div class="kv__v" id="f6">—</div></div>
+          <div class="kv__row"><div class="kv__k">Recommendation</div><div class="kv__v" id="rec">—</div></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="downloadPdf">Download PDF</button>
+          <a class="btn ghost" href="forecast.html">Open Forecast Viewer</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="figure">
+          <div class="figure__cap"><span class="pill">Figure</span> Method flow (for academic credibility)</div>
+          <img src="../assets/figures/fig-05-flowchart.png" alt="Flowchart"/>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>jsPDF (CDN)</div>
+      <div>Downloads in browser</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script type="module" src="../js/app/reportPage.js"></script>
+</body>
+</html>

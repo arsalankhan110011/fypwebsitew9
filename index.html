@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>WindCast FYP — Wind Forecasting Platform (KPK)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__mark">WC</div>
+        <div>
+          <div class="brand__title">WindCast FYP</div>
+          <div class="brand__subtitle">Multi-Horizon Wind Speed Forecasting (KPK) + Cross-Dataset Validation (Texas)</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="active" href="../index.html">Home</a>
+        <a href="pages/dashboard.html">Dashboard</a>
+        <a href="pages/map.html">Map</a>
+        <a href="pages/methodology.html">Methodology</a>
+        <a href="pages/results.html">Results</a>
+        <a href="pages/validation-texas.html">Texas</a>
+        <a class="cta" href="pages/report.html">Report</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="panel">
+        <h1 class="h1">Wind Potential + Forecasting for Khyber Pakhtunkhwa (KPK)</h1>
+        <p class="p muted">
+          A research-grade static web demo for your FYP. Users can select a station (10 PMD stations) or use their GPS location
+          to automatically use the nearest station (B1). The site shows forecasts (Lead 1/3/6 months), recommendations, and a downloadable PDF report.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="pages/dashboard.html">Open Dashboard</a>
+          <a class="btn ghost" href="pages/map.html">Explore Heatmap</a>
+          <a class="btn ghost" href="pages/report.html">Build Report</a>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="grid3">
+          <div class="card card--tight">
+            <div class="h3">User Search</div>
+            <p class="p muted small">Station search + “Use my location” (nearest station fallback).</p>
+          </div>
+          <div class="card card--tight">
+            <div class="h3">Forecast</div>
+            <p class="p muted small">Real values loaded from your forecast CSV outputs.</p>
+          </div>
+          <div class="card card--tight">
+            <div class="h3">PDF Report</div>
+            <p class="p muted small">One click PDF with station, horizon, and recommendation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="figure">
+          <div class="figure__cap"><span class="pill">Figure</span> KPK station locations</div>
+          <img src="assets/figures/fig-01-locations.png" alt="KPK station locations"/>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© 2026 WindCast FYP — Static demo website</div>
+      <div>Deploy-ready for GitHub → Vercel</div>
+    </div>
+  </footer>
+</body>
+</html>

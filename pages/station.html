@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Station — WindCast FYP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/layout.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand"><div class="brand__mark">WC</div><div><div class="brand__title">WindCast FYP</div><div class="brand__subtitle">Station</div></div></div>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Map</a>
+        <a class="active" href="station.html">Station</a>
+        <a class="cta" href="report.html">Report</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+      <div>
+        <div class="muted small">Station</div>
+        <h1 class="h2" id="stationTitle">—</h1>
+        <div class="muted small">Coordinates: <span id="coords">—</span></div>
+      </div>
+      <span id="badge" class="badge">—</span>
+    </div>
+
+    <div class="grid2" style="margin-top:14px;">
+      <div class="panel">
+        <h2 class="h3">Forecast Snapshot (from summary CSV)</h2>
+        <div class="kv">
+          <div class="kv__row"><div class="kv__k">Lead 1</div><div class="kv__v"><span id="f1">—</span> <span class="muted small" id="d1"></span></div></div>
+          <div class="kv__row"><div class="kv__k">Lead 3</div><div class="kv__v"><span id="f3">—</span> <span class="muted small" id="d3"></span></div></div>
+          <div class="kv__row"><div class="kv__k">Lead 6</div><div class="kv__v"><span id="f6">—</span> <span class="muted small" id="d6"></span></div></div>
+        </div>
+
+        <div class="hr"></div>
+        <div class="kv">
+          <div class="kv__row"><div class="kv__k">Direction (hint)</div><div class="kv__v" id="dir">—</div></div>
+          <div class="kv__row"><div class="kv__k">Recommendation</div><div class="kv__v" id="rec">—</div></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn ghost" id="goForecast" href="#">Open Forecast Viewer</a>
+          <a class="btn primary" id="goReport" href="#">Download PDF Report</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="figure">
+          <div class="figure__cap"><span class="pill">Figure</span> Forecast example</div>
+          <img src="../assets/figures/fig-10-forecast-future.png" alt="Forecast future"/>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>Station page uses your CSV summary</div>
+      <div>Recommendation is rule-based (editable)</div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/app/stationPage.js"></script>
+</body>
+</html>

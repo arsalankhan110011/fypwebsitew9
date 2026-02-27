@@ -1,0 +1,12 @@
+[
+  { "name": "Balakot", "lat": 34.547, "lon": 73.351, "region": "KPK", "direction_hint": "NW → SE" },
+  { "name": "Bannu", "lat": 32.988, "lon": 70.605, "region": "KPK", "direction_hint": "W → E" },
+  { "name": "Cherat", "lat": 33.823, "lon": 71.892, "region": "KPK", "direction_hint": "SW → NE" },
+  { "name": "Chitral", "lat": 35.851, "lon": 71.786, "region": "KPK", "direction_hint": "N → S" },
+  { "name": "Dir Upper", "lat": 35.197, "lon": 71.874, "region": "KPK", "direction_hint": "NW → SE" },
+  { "name": "Drosh", "lat": 35.567, "lon": 71.794, "region": "KPK", "direction_hint": "N → S" },
+  { "name": "Kakul", "lat": 34.188, "lon": 73.241, "region": "KPK", "direction_hint": "W → E" },
+  { "name": "Parachinar", "lat": 33.899, "lon": 70.100, "region": "KPK", "direction_hint": "SW → NE" },
+  { "name": "Peshawar", "lat": 34.015, "lon": 71.580, "region": "KPK", "direction_hint": "W → E" },
+  { "name": "Saidu Sharif", "lat": 34.747, "lon": 72.357, "region": "KPK", "direction_hint": "NW → SE" }
+]
