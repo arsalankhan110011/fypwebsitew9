@@ -1,46 +1,113 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Methodology — WindCast FYP</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/base.css"/><link rel="stylesheet" href="../css/layout.css"/>
-<link rel="stylesheet" href="../css/components.css"/><link rel="stylesheet" href="../css/pages.css"/>
-</head><body>
-<header class="topbar"><div class="container topbar__inner">
-<div class="brand"><div class="brand__mark">WC</div><div><div class="brand__title">WindCast FYP</div><div class="brand__subtitle">Methodology</div></div></div>
-<nav class="nav">
-<a href="../index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="map.html">Map</a>
-<a class="active" href="methodology.html">Methodology</a><a href="results.html">Results</a>
-<a href="validation-texas.html">Texas</a><a class="cta" href="report.html">Report</a>
-</nav></div></header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Methodology — WindCast</title>
 
-<main class="container">
-<h1 class="h2">Data Preparation & Pipeline</h1>
-<p class="p muted">This page visualizes missing-data handling, outlier processing, and the overall workflow using your provided figures.</p>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-<div class="grid2">
-  <div class="panel">
-    <div class="figure"><div class="figure__cap"><span class="pill">Figure</span> Missing data</div>
-      <img src="../assets/figures/fig-02-missing.png" alt="Missing"/></div>
-    <div class="figure" style="margin-top:12px;"><div class="figure__cap"><span class="pill">Figure</span> Missing filled</div>
-      <img src="../assets/figures/fig-02-missing-filled.png" alt="Missing filled"/></div>
-  </div>
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/layout.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
 
-  <div class="panel">
-    <div class="figure"><div class="figure__cap"><span class="pill">Figure</span> With outliers</div>
-      <img src="../assets/figures/fig-03-outliers.png" alt="Outliers"/></div>
-    <div class="figure" style="margin-top:12px;"><div class="figure__cap"><span class="pill">Figure</span> After outliers</div>
-      <img src="../assets/figures/fig-04-after-outliers.png" alt="After outliers"/></div>
-  </div>
-</div>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <!-- Logo: put your file at /assets/icons/logo.png -->
+        <div class="brand__mark">
+          <img src="../assets/icons/logo.png" alt="WindCast logo"
+               onerror="this.style.display='none'; this.parentElement.textContent='WC';" />
+        </div>
+        <div>
+          <div class="brand__title">WindCast</div>
+          <div class="brand__subtitle">Methodology</div>
+        </div>
+      </div>
 
-<div class="panel" style="margin-top:16px;">
-  <div class="figure"><div class="figure__cap"><span class="pill">Figure</span> Workflow / Flowchart</div>
-    <img src="../assets/figures/fig-05-flowchart.png" alt="Flowchart"/></div>
-</div>
-</main>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Map</a>
+        <a class="active" href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="validation-texas.html">Texas</a>
+        <a href="data.html">Data</a>
+        <a href="about.html">About</a>
+        <a class="cta" href="report.html">Report</a>
 
-<footer class="footer"><div class="container footer__inner">
-<div>Methodology visuals from your figures</div><div>Static academic section</div>
-</div></footer>
-</body></html>
+        <!-- Dark mode toggle -->
+        <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">
+          🌙 <span class="hide-sm">Dark</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h2">Data Preparation & Modeling Pipeline</h1>
+    <p class="p muted">
+      This section documents the core preprocessing steps used prior to forecasting, including missing-value handling,
+      outlier treatment, and the end-to-end workflow adopted for the KPK station dataset.
+    </p>
+
+    <div class="grid2">
+      <div class="panel">
+        <h2 class="h3">Missing values</h2>
+        <p class="p muted small">Visualization of missing observations in the raw station series.</p>
+
+        <div class="figure">
+          <div class="figure__cap"><span class="pill">Figure</span> Missing data</div>
+          <img src="../assets/figures/fig-02-missing.png" alt="Missing data"/>
+        </div>
+
+        <div class="figure" style="margin-top:12px;">
+          <div class="figure__cap"><span class="pill">Figure</span> Missing values after filling</div>
+          <img src="../assets/figures/fig-02-missing-filled.png" alt="Missing data filled"/>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="h3">Outliers</h2>
+        <p class="p muted small">Comparison before and after outlier handling to stabilize training signals.</p>
+
+        <div class="figure">
+          <div class="figure__cap"><span class="pill">Figure</span> With outliers</div>
+          <img src="../assets/figures/fig-03-outliers.png" alt="With outliers"/>
+        </div>
+
+        <div class="figure" style="margin-top:12px;">
+          <div class="figure__cap"><span class="pill">Figure</span> After outlier processing</div>
+          <img src="../assets/figures/fig-04-after-outliers.png" alt="After outlier processing"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px;">
+      <h2 class="h3">End-to-end workflow</h2>
+      <p class="p muted small">
+        A consolidated view of the overall pipeline from dataset preparation to forecasting and evaluation.
+      </p>
+
+      <div class="figure">
+        <div class="figure__cap"><span class="pill">Figure</span> Workflow / Flowchart</div>
+        <img src="../assets/figures/fig-05-flowchart.png" alt="Workflow / Flowchart"/>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© 2026 WindCast</div>
+      <div>Methodology & preprocessing documentation</div>
+    </div>
+  </footer>
+
+  <!-- Theme toggle -->
+  <script type="module" src="../js/app/theme.js"></script>
+</body>
+</html>

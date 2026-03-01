@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Map — WindCast FYP</title>
+  <title>Map — WindCast</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/base.css"/>
   <link rel="stylesheet" href="../css/layout.css"/>
   <link rel="stylesheet" href="../css/components.css"/>
@@ -13,13 +15,22 @@
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
+
 <body>
   <header class="topbar">
     <div class="container topbar__inner">
       <div class="brand">
-        <div class="brand__mark">WC</div>
-        <div><div class="brand__title">WindCast FYP</div><div class="brand__subtitle">Heatmap</div></div>
+        <!-- Logo: put your file at /assets/icons/logo.png -->
+        <div class="brand__mark">
+          <img src="../assets/icons/logo.png" alt="WindCast logo"
+               onerror="this.style.display='none'; this.parentElement.textContent='WC';" />
+        </div>
+        <div>
+          <div class="brand__title">WindCast</div>
+          <div class="brand__subtitle">Map & Heatmap</div>
+        </div>
       </div>
+
       <nav class="nav">
         <a href="../index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
@@ -27,28 +38,43 @@
         <a href="methodology.html">Methodology</a>
         <a href="results.html">Results</a>
         <a href="validation-texas.html">Texas</a>
+        <a href="data.html">Data</a>
+        <a href="about.html">About</a>
         <a class="cta" href="report.html">Report</a>
+
+        <!-- Dark mode toggle -->
+        <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">
+          🌙 <span class="hide-sm">Dark</span>
+        </button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h1 class="h2">Wind Forecast Heatmap (Lead-1)</h1>
-    <p class="p muted">Heat intensity is derived from your Lead-1 forecast values (normalized). Click markers to open station pages.</p>
+    <h1 class="h2">Wind Forecast Heatmap (Lead 1)</h1>
+    <p class="p muted">
+      Heat intensity is derived from Lead-1 forecast values (normalized across stations).
+      Click a station marker to open its detailed page.
+    </p>
 
     <div class="controls">
       <div class="control">
         <label>Heat layer</label>
         <div class="toast">
-          <input id="toggleHeat" type="checkbox" checked/> Show heatmap
+          <input id="toggleHeat" type="checkbox" checked/>
+          <span style="margin-left:8px;">Show heatmap overlay</span>
         </div>
       </div>
+
       <div class="control">
-        <label>Note</label>
-        <div class="toast">This is station-based heat. For full KPK continuous grid, you’d add ERA5 / a gridded dataset later.</div>
+        <label>Interpretation</label>
+        <div class="toast">
+          The heatmap represents station-level intensity. A continuous KPK grid requires a gridded wind dataset (e.g., reanalysis) in a future upgrade.
+        </div>
       </div>
+
       <div class="control">
-        <label>Quick link</label>
+        <label>Navigation</label>
         <a class="btn ghost" href="dashboard.html">Back to Dashboard</a>
       </div>
     </div>
@@ -60,13 +86,17 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>Leaflet + heat layer</div>
-      <div>Data: your forecast CSV</div>
+      <div>© 2026 WindCast</div>
+      <div>Interactive map powered by Leaflet</div>
     </div>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+  <!-- Page logic -->
   <script type="module" src="../js/app/mapPage.js"></script>
+  <!-- Theme toggle -->
+  <script type="module" src="../js/app/theme.js"></script>
 </body>
 </html>

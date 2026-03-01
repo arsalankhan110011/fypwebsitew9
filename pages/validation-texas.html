@@ -1,36 +1,102 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Texas Validation — WindCast FYP</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/base.css"/><link rel="stylesheet" href="../css/layout.css"/>
-<link rel="stylesheet" href="../css/components.css"/><link rel="stylesheet" href="../css/pages.css"/>
-</head><body>
-<header class="topbar"><div class="container topbar__inner">
-<div class="brand"><div class="brand__mark">WC</div><div><div class="brand__title">WindCast FYP</div><div class="brand__subtitle">Cross-dataset Validation</div></div></div>
-<nav class="nav">
-<a href="../index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="map.html">Map</a>
-<a href="methodology.html">Methodology</a><a href="results.html">Results</a>
-<a class="active" href="validation-texas.html">Texas</a><a class="cta" href="report.html">Report</a>
-</nav></div></header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Texas Validation — WindCast</title>
 
-<main class="container">
-<h1 class="h2">Texas Wind Turbine Validation Story</h1>
-<p class="p muted">This section increases academic credibility by showing cross-dataset validation workflow and future projections (your provided figures).</p>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-<div class="grid2">
-  <div class="panel">
-    <div class="figure"><div class="figure__cap"><span class="pill">Figure</span> Texas rollout</div>
-      <img src="../assets/figures/fig-14-texas-rollout.png" alt="Texas rollout"/></div>
-  </div>
-  <div class="panel">
-    <div class="figure"><div class="figure__cap"><span class="pill">Figure</span> Future Texas</div>
-      <img src="../assets/figures/fig-15-future-texas.png" alt="Future texas"/></div>
-  </div>
-</div>
-</main>
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/layout.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
 
-<footer class="footer"><div class="container footer__inner">
-<div>Validation section</div><div>Research-grade presentation</div>
-</div></footer>
-</body></html>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <!-- Logo: put your file at /assets/icons/logo.png -->
+        <div class="brand__mark">
+          <img src="../assets/icons/logo.png" alt="WindCast logo"
+               onerror="this.style.display='none'; this.parentElement.textContent='WC';" />
+        </div>
+        <div>
+          <div class="brand__title">WindCast</div>
+          <div class="brand__subtitle">Cross-dataset Validation</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Map</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a class="active" href="validation-texas.html">Texas</a>
+        <a href="data.html">Data</a>
+        <a href="about.html">About</a>
+        <a class="cta" href="report.html">Report</a>
+
+        <!-- Dark mode toggle -->
+        <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">
+          🌙 <span class="hide-sm">Dark</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h2">Texas Wind Turbine Validation</h1>
+    <p class="p muted">
+      This section documents cross-dataset validation using a public wind turbine dataset.
+      The purpose is to strengthen model credibility by demonstrating generalization behavior
+      beyond the KPK station dataset.
+    </p>
+
+    <div class="grid2">
+      <div class="panel">
+        <h2 class="h3">Rollout / evaluation workflow</h2>
+        <p class="p muted small">
+          Illustration of the rollout strategy used to evaluate model behavior on the turbine dataset.
+        </p>
+        <div class="figure">
+          <div class="figure__cap"><span class="pill">Figure</span> Texas rollout</div>
+          <img src="../assets/figures/fig-14-texas-rollout.png" alt="Texas rollout"/>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="h3">Future projection example</h2>
+        <p class="p muted small">
+          Representative future forecasting visualization for the turbine dataset.
+        </p>
+        <div class="figure">
+          <div class="figure__cap"><span class="pill">Figure</span> Future Texas</div>
+          <img src="../assets/figures/fig-15-future-texas.png" alt="Future Texas"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px;">
+      <h2 class="h3">Next step</h2>
+      <p class="p muted">
+        Return to the <a href="dashboard.html"><b>Dashboard</b></a> for interactive station selection (or GPS nearest station),
+        forecast snapshots, and report generation.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© 2026 WindCast</div>
+      <div>Cross-dataset validation documentation</div>
+    </div>
+  </footer>
+
+  <!-- Theme toggle -->
+  <script type="module" src="../js/app/theme.js"></script>
+</body>
+</html>

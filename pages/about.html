@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About — WindCast</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/layout.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__mark">
+          <img src="../assets/icons/logo.png" alt="WindCast logo"
+               onerror="this.style.display='none'; this.parentElement.textContent='WC';" />
+        </div>
+        <div>
+          <div class="brand__title">WindCast</div>
+          <div class="brand__subtitle">About</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Map</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="validation-texas.html">Texas</a>
+        <a href="data.html">Data</a>
+        <a class="active" href="about.html">About</a>
+        <a class="cta" href="report.html">Report</a>
+
+        <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">
+          🌙 <span class="hide-sm">Dark</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h2">About WindCast</h1>
+    <p class="p muted">
+      WindCast is a wind forecasting and decision-support platform designed for Khyber Pakhtunkhwa (KPK), Pakistan.
+      It provides station-level forecast snapshots (Lead 1/3/6) and practical guidance for feasibility screening and reporting.
+    </p>
+
+    <div class="grid2" style="margin-top:14px;">
+      <div class="panel">
+        <h2 class="h3">Project objective</h2>
+        <p class="p muted">
+          The goal is to support early-stage wind energy assessment by combining forecasting outputs with a clear UI for:
+          station selection, nearest-station mapping (GPS), forecast visualization, and exportable reports.
+        </p>
+
+        <div class="hr"></div>
+
+        <h2 class="h3">Key features</h2>
+        <ul class="p muted" style="line-height:1.9; margin:0; padding-left:18px;">
+          <li>Station-based selection (10 PMD stations in KPK)</li>
+          <li>Nearest-station mapping using GPS for non-station locations</li>
+          <li>Multi-horizon forecast snapshot (Lead 1 / 3 / 6 months)</li>
+          <li>Interactive map + station heatmap layer</li>
+          <li>PDF report generation for documentation</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2 class="h3">Scope and limitations</h2>
+        <p class="p muted">
+          WindCast uses station-level datasets. For locations beyond the station network, WindCast maps the user to the nearest station.
+          This is a practical baseline approach; higher-resolution coverage can be added later using gridded wind datasets (e.g., reanalysis).
+        </p>
+
+        <div class="hr"></div>
+
+        <h2 class="h3">How to use</h2>
+        <ol class="p muted" style="line-height:1.9; margin:0; padding-left:18px;">
+          <li>Open the Dashboard and select a station (or use GPS to detect nearest station)</li>
+          <li>Review forecast snapshots and guidance</li>
+          <li>Open the Report page and export a PDF</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px;">
+      <h2 class="h3">Team & contact</h2>
+      <div class="grid2" style="margin-top:10px;">
+        <div class="card card--tight">
+          <div class="h3">Author</div>
+          <p class="p muted" style="margin:0;">
+            <b>Muhammad Arsalan Khan</b><br/>
+            UET Peshawar (USPCAS-E)<br/>
+            Email: arsalanene@gmail.com
+          </p>
+        </div>
+        <div class="card card--tight">
+          <div class="h3">Supervisor</div>
+          <p class="p muted" style="margin:0;">
+            <b>Dr. Kaleem Ullah</b><br/>
+            UET Peshawar (USPCAS-E)<br/>
+            (Add supervisor email if you want)
+          </p>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <h2 class="h3">Suggested citation</h2>
+      <p class="p muted">
+        Add your final paper citation here (IEEE / APA). If you later export a PDF of your paper,
+        we can add a download link on this page.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© 2026 WindCast</div>
+      <div>About & documentation</div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/app/theme.js"></script>
+</body>
+</html>

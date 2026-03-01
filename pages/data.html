@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Data — WindCast</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/layout.css"/>
+  <link rel="stylesheet" href="../css/components.css"/>
+  <link rel="stylesheet" href="../css/pages.css"/>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__mark">
+          <img src="../assets/icons/logo.png" alt="WindCast logo"
+               onerror="this.style.display='none'; this.parentElement.textContent='WC';" />
+        </div>
+        <div>
+          <div class="brand__title">WindCast</div>
+          <div class="brand__subtitle">Data</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="map.html">Map</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="validation-texas.html">Texas</a>
+        <a class="active" href="data.html">Data</a>
+        <a href="about.html">About</a>
+        <a class="cta" href="report.html">Report</a>
+
+        <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">
+          🌙 <span class="hide-sm">Dark</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h2">Data Sources & Format</h1>
+    <p class="p muted">
+      This page documents the station set and the forecast output files used throughout WindCast.
+      It also provides direct downloads for reproducibility and future updates.
+    </p>
+
+    <div class="grid2" style="margin-top:14px;">
+      <div class="panel">
+        <h2 class="h3">KPK station set</h2>
+        <p class="p muted small">Stations are loaded from <code>data/stations/stations_kpk.json</code>.</p>
+
+        <table class="table" style="margin-top:10px;">
+          <thead>
+            <tr>
+              <th>Station</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Direction hint</th>
+            </tr>
+          </thead>
+          <tbody id="stationsBody">
+            <tr><td colspan="4" class="muted">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h2 class="h3">Forecast outputs</h2>
+        <p class="p muted">
+          WindCast uses two output files:
+        </p>
+
+        <div class="card card--tight" style="margin-top:10px;">
+          <div class="h3">Summary (per station)</div>
+          <p class="p muted small" style="margin:0;">
+            <code>future_forecast_all_stations_1_3_6m_summary.csv</code><br/>
+            Columns include: station, date_1m, forecast_1m_ms, date_3m, forecast_3m_ms, date_6m, forecast_6m_ms
+          </p>
+          <div class="actions" style="margin-top:10px;">
+            <a class="btn ghost" href="../data/forecasts/future_forecast_all_stations_1_3_6m_summary.csv" download>
+              Download summary CSV
+            </a>
+          </div>
+        </div>
+
+        <div class="card card--tight" style="margin-top:12px;">
+          <div class="h3">Long format (per lead)</div>
+          <p class="p muted small" style="margin:0;">
+            <code>future_forecast_all_stations_1_3_6m_long.csv</code><br/>
+            Columns include: station, lead_months, date, forecast_ms
+          </p>
+          <div class="actions" style="margin-top:10px;">
+            <a class="btn ghost" href="../data/forecasts/future_forecast_all_stations_1_3_6m_long.csv" download>
+              Download long CSV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px;">
+      <h2 class="h3">Data notes</h2>
+      <ul class="p muted" style="line-height:1.9; margin:0; padding-left:18px;">
+        <li>Forecast values are in <b>m/s</b> as provided in the CSV outputs.</li>
+        <li>“Nearest station” mode maps a GPS location to the closest station by great-circle distance.</li>
+        <li>For full KPK continuous coverage, a gridded dataset can be integrated later.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© 2026 WindCast</div>
+      <div>Data documentation & downloads</div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/app/dataPage.js"></script>
+  <script type="module" src="../js/app/theme.js"></script>
+</body>
+</html>
