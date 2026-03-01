@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Data — WindCast</title>
+  <title>Data - WindCast</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
         <a class="cta" href="report.html">Report</a>
 
         <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">
-          🌙 <span class="hide-sm">Dark</span>
+          Dark
         </button>
       </nav>
     </div>
@@ -52,6 +52,21 @@
       This page documents the station set and the forecast output files used throughout WindCast.
       It also provides direct downloads for reproducibility and future updates.
     </p>
+
+    <div class="grid3" style="margin-top:8px;">
+      <div class="stat">
+        <div class="stat__k">Primary geography</div>
+        <div class="stat__v">KPK</div>
+      </div>
+      <div class="stat">
+        <div class="stat__k">Forecast units</div>
+        <div class="stat__v">m/s</div>
+      </div>
+      <div class="stat">
+        <div class="stat__k">Export types</div>
+        <div class="stat__v">CSV + PDF</div>
+      </div>
+    </div>
 
     <div class="grid2" style="margin-top:14px;">
       <div class="panel">
@@ -68,7 +83,7 @@
             </tr>
           </thead>
           <tbody id="stationsBody">
-            <tr><td colspan="4" class="muted">Loading…</td></tr>
+            <tr><td colspan="4" class="muted">Loading...</td></tr>
           </tbody>
         </table>
       </div>
@@ -83,7 +98,7 @@
           <div class="h3">Summary (per station)</div>
           <p class="p muted small" style="margin:0;">
             <code>future_forecast_all_stations_1_3_6m_summary.csv</code><br/>
-            Columns include: station, date_1m, forecast_1m_ms, date_3m, forecast_3m_ms, date_6m, forecast_6m_ms
+            Columns: station, date_1m, forecast_1m_ms, date_3m, forecast_3m_ms, date_6m, forecast_6m_ms
           </p>
           <div class="actions" style="margin-top:10px;">
             <a class="btn ghost" href="../data/forecasts/future_forecast_all_stations_1_3_6m_summary.csv" download>
@@ -96,7 +111,7 @@
           <div class="h3">Long format (per lead)</div>
           <p class="p muted small" style="margin:0;">
             <code>future_forecast_all_stations_1_3_6m_long.csv</code><br/>
-            Columns include: station, lead_months, date, forecast_ms
+            Columns: station, lead_months, date, forecast_ms
           </p>
           <div class="actions" style="margin-top:10px;">
             <a class="btn ghost" href="../data/forecasts/future_forecast_all_stations_1_3_6m_long.csv" download>
@@ -111,7 +126,7 @@
       <h2 class="h3">Data notes</h2>
       <ul class="p muted" style="line-height:1.9; margin:0; padding-left:18px;">
         <li>Forecast values are in <b>m/s</b> as provided in the CSV outputs.</li>
-        <li>“Nearest station” mode maps a GPS location to the closest station by great-circle distance.</li>
+        <li>"Nearest station" mode maps a GPS location to the closest station by great-circle distance.</li>
         <li>For full KPK continuous coverage, a gridded dataset can be integrated later.</li>
       </ul>
     </div>
@@ -119,12 +134,14 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>© 2026 WindCast</div>
+      <div>&copy; 2026 WindCast</div>
       <div>Data documentation & downloads</div>
     </div>
   </footer>
 
   <script type="module" src="../js/app/dataPage.js"></script>
+  <script type="module" src="../js/app/uiEnhancements.js"></script>
   <script type="module" src="../js/app/theme.js"></script>
 </body>
 </html>
+

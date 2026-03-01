@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>WindCast — Wind Forecasting Platform (KPK)</title>
+  <title>WindCast - Wind Forecasting Platform (KPK)</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,14 +43,13 @@
         <a class="cta" href="pages/report.html">Report</a>
 
         <button id="themeToggle" class="theme-btn" type="button" aria-pressed="false">
-          🌙 <span class="hide-sm">Dark</span>
+          Dark
         </button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- HERO -->
     <section class="hero">
       <div class="panel">
         <h1 class="h1">Wind Potential + Forecasting for Khyber Pakhtunkhwa (KPK)</h1>
@@ -60,13 +59,27 @@
           View forecast snapshots (Lead 1/3/6), receive recommendations, and export a report for documentation.
         </p>
 
+        <div class="grid3" style="margin-top:8px;">
+          <div class="stat">
+            <div class="stat__k">Coverage</div>
+            <div class="stat__v">10 stations</div>
+          </div>
+          <div class="stat">
+            <div class="stat__k">Forecast horizons</div>
+            <div class="stat__v">1, 3, 6 months</div>
+          </div>
+          <div class="stat">
+            <div class="stat__k">Main output</div>
+            <div class="stat__v">Actionable guidance</div>
+          </div>
+        </div>
+
         <div class="actions">
           <a class="btn primary" href="pages/dashboard.html">Open Dashboard</a>
           <a class="btn ghost" href="pages/map.html">Explore Heatmap</a>
           <a class="btn ghost" href="pages/report.html">Build Report</a>
         </div>
 
-        <!-- Quick station jump -->
         <div class="hr"></div>
         <div class="grid2">
           <div class="card card--tight">
@@ -99,15 +112,13 @@
           <div class="card card--tight">
             <div class="h3">Location-based support</div>
             <p class="p muted small">
-              For locations beyond the 10 stations, use <b>Dashboard → Detect nearest station</b> (GPS).
+              For locations beyond the 10 stations, use <b>Dashboard -> Detect nearest station</b> (GPS).
             </p>
             <a class="btn ghost" href="pages/dashboard.html">Detect nearest station</a>
           </div>
         </div>
 
         <div class="hr"></div>
-
-        <!-- VALUE STRIP -->
         <div class="grid3">
           <div class="card card--tight">
             <div class="h3">Assessment</div>
@@ -132,10 +143,12 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section style="margin-top:16px;">
       <div class="panel">
-        <h2 class="h2">How WindCast Works</h2>
+        <div class="section-head">
+          <h2 class="h2" style="margin:0;">How WindCast Works</h2>
+          <span class="muted small">Simple 3-step flow</span>
+        </div>
         <div class="grid3" style="margin-top:10px;">
           <div class="card card--tight">
             <div class="h3">1) Choose a reference</div>
@@ -162,15 +175,15 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>© 2026 WindCast</div>
+      <div>&copy; 2026 WindCast</div>
       <div>Wind forecasting & decision support (KPK)</div>
     </div>
   </footer>
 
+  <script type="module" src="js/app/uiEnhancements.js"></script>
   <script type="module" src="js/app/theme.js"></script>
 
   <script>
-    // Home quick station -> station.html?station=...
     const sel = document.getElementById("homeStationSelect");
     const btn = document.getElementById("openStationBtn");
     function syncLink() {
@@ -185,3 +198,4 @@
   </script>
 </body>
 </html>
+

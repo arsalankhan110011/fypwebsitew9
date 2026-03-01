@@ -1,4 +1,3 @@
-// js/app/dataPage.js
 import { CONFIG } from "./config.js";
 import { loadJson } from "./dataLoader.js";
 
@@ -8,13 +7,13 @@ async function init() {
     const body = document.getElementById("stationsBody");
     body.innerHTML = "";
 
-    stations.forEach(s => {
+    stations.forEach((s) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td><b>${s.name}</b></td>
         <td>${Number(s.lat).toFixed(3)}</td>
         <td>${Number(s.lon).toFixed(3)}</td>
-        <td>${s.direction_hint || "—"}</td>
+        <td>${s.direction_hint || "-"}</td>
       `;
       body.appendChild(tr);
     });

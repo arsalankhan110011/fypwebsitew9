@@ -1,4 +1,3 @@
-// js/app/theme.js
 const KEY = "windcast_theme"; // "light" | "dark"
 
 function applyTheme(theme) {
@@ -10,8 +9,8 @@ function applyTheme(theme) {
     btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
     btn.title = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
     btn.innerHTML = theme === "dark"
-      ? '☀️ <span class="hide-sm">Light</span>'
-      : '🌙 <span class="hide-sm">Dark</span>';
+      ? 'Light'
+      : 'Dark';
   }
 }
 
@@ -31,3 +30,4 @@ function initTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", initTheme);
+
